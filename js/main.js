@@ -1,18 +1,14 @@
 (function ($) {
     "use strict";
 
-    // Carrega as camadas isoladas sem alterar o CSS global.
-    var loadStylesheet = function (id, href) {
-        if (document.getElementById(id)) return;
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        link.id = id;
-        document.head.appendChild(link);
-    };
-
-    loadStylesheet('tejo-performance-css', 'css/performance.css');
-    loadStylesheet('tejo-header-css', 'css/header.css');
+    // Carrega a camada de performance o mais cedo possível sem alterar o CSS global.
+    if (!document.getElementById('tejo-performance-css')) {
+        var performanceCss = document.createElement('link');
+        performanceCss.rel = 'stylesheet';
+        performanceCss.href = 'css/performance.css';
+        performanceCss.id = 'tejo-performance-css';
+        document.head.appendChild(performanceCss);
+    }
 
     // Prioriza apenas o primeiro visual do hero; o restante continua sob demanda.
     var heroImages = document.querySelectorAll('.header-carousel img');
