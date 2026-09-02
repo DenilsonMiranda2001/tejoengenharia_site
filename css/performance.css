@@ -8,10 +8,26 @@
     .values-section,
     .process-section,
     .projects-section,
-    .founder-section,
-    .cta-section {
+    .founder-section {
         content-visibility: auto;
     }
+}
+
+/* A chamada final de contato fica sempre em fluxo normal para preservar
+   exatamente o alinhamento e a altura visual antes do rodapé. */
+.cta-section {
+    content-visibility: visible !important;
+    contain: none !important;
+}
+
+.cta-section .container {
+    width: 100%;
+}
+
+.cta-section .cta-panel {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img {
