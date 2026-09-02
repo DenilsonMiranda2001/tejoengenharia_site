@@ -1,8 +1,7 @@
 /* TEJO — PERFORMANCE LAYER
-   Regras isoladas para reduzir custo de renderização sem alterar o layout.
+   Otimizações isoladas: não altera a identidade visual nem a estrutura do site.
 */
 
-/* Evita cálculos de layout/paint de seções que ainda estão fora da viewport. */
 @media (min-width: 768px) {
     .about-section,
     .services-section,
@@ -16,12 +15,15 @@
     }
 }
 
-/* Imagens nunca devem provocar overflow horizontal e podem ser decodificadas fora do frame crítico. */
 img {
     max-width: 100%;
 }
 
-/* Reduz trabalho de animação em máquinas que pedem menos movimento. */
+/* Mantém dimensões previsíveis e evita trabalho desnecessário de decodificação. */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
