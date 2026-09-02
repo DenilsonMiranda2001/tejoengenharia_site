@@ -1,17 +1,6 @@
 (function ($) {
     "use strict";
 
-    var loadStylesheet = function (href, id) {
-        if (document.getElementById(id)) return;
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        link.id = id;
-        document.head.appendChild(link);
-    };
-
-    loadStylesheet('css/performance.css', 'tejo-performance-css');
-
     var spinner = document.getElementById('spinner');
     if (spinner) {
         requestAnimationFrame(function () {
@@ -78,9 +67,12 @@
         $('.header-carousel').addClass('header-carousel-static');
     }
 
-    if ($('.projects-section').length) {
-        loadStylesheet('css/projects-home.css', 'projects-home-css');
-        $('#projectModal').remove();
+    if ($('.projects-section').length && !document.getElementById('projects-home-css')) {
+        var projectsCss = document.createElement('link');
+        projectsCss.rel = 'stylesheet';
+        projectsCss.href = 'css/projects-home.css';
+        projectsCss.id = 'projects-home-css';
+        document.head.appendChild(projectsCss);
     }
 
     var projectPages = {
