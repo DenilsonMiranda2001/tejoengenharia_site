@@ -1,0 +1,298 @@
+/* ==========================================================
+   PÁGINAS INDIVIDUAIS DE PROJETOS — TEJO ENGENHARIA
+   ========================================================== */
+
+.project-page {
+    background: #f7f5f1;
+    color: #68645f;
+}
+
+.project-page .site-header {
+    position: sticky;
+}
+
+.project-detail-hero {
+    background: #151515;
+    min-height: 72vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-detail-hero::after {
+    background: linear-gradient(90deg, rgba(10,10,10,.82) 0%, rgba(10,10,10,.42) 52%, rgba(10,10,10,.12) 100%);
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.project-detail-hero-image {
+    height: 100%;
+    inset: 0;
+    position: absolute;
+}
+
+.project-detail-hero-image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-detail-hero-content {
+    align-items: flex-end;
+    display: flex;
+    min-height: 72vh;
+    padding: 150px 0 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.project-detail-hero-inner {
+    max-width: 850px;
+}
+
+.project-detail-number {
+    color: #d2a56c;
+    display: block;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.project-detail-category {
+    color: rgba(255,255,255,.72);
+    display: block;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    margin-bottom: 13px;
+    text-transform: uppercase;
+}
+
+.project-detail-hero h1 {
+    color: #fff;
+    font-size: clamp(3.3rem, 8vw, 7.5rem);
+    letter-spacing: -.055em;
+    line-height: .9;
+    margin: 0 0 28px;
+}
+
+.project-detail-hero-lead {
+    color: rgba(255,255,255,.78);
+    font-size: 1.12rem;
+    line-height: 1.8;
+    margin: 0;
+    max-width: 650px;
+}
+
+.project-detail-main {
+    padding: 100px 0 120px;
+}
+
+.project-detail-intro {
+    align-items: start;
+    display: grid;
+    gap: 80px;
+    grid-template-columns: .75fr 1.25fr;
+    margin-bottom: 100px;
+}
+
+.project-detail-kicker {
+    color: #bf8f54;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.project-detail-intro h2 {
+    color: #151515;
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    letter-spacing: -.045em;
+    line-height: 1;
+    margin: 12px 0 0;
+}
+
+.project-detail-copy {
+    font-size: 1.06rem;
+    line-height: 1.9;
+}
+
+.project-detail-copy p {
+    margin: 0 0 20px;
+}
+
+.project-detail-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.project-detail-image {
+    background: #e5e0d8;
+    margin: 0 0 90px;
+    overflow: hidden;
+}
+
+.project-detail-image img {
+    display: block;
+    height: auto;
+    max-height: 780px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-detail-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 100px;
+}
+
+.project-detail-card {
+    background: #fff;
+    border-top: 2px solid #bf8f54;
+    min-height: 190px;
+    padding: 30px;
+}
+
+.project-detail-card span {
+    color: #bf8f54;
+    display: block;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    margin-bottom: 20px;
+}
+
+.project-detail-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.project-detail-card p {
+    font-size: .92rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.project-detail-cta {
+    align-items: center;
+    background: #151515;
+    color: #fff;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 55px 60px;
+}
+
+.project-detail-cta h2 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.7rem);
+    letter-spacing: -.045em;
+    line-height: 1;
+    margin: 0 0 12px;
+}
+
+.project-detail-cta p {
+    color: rgba(255,255,255,.65);
+    margin: 0;
+    max-width: 600px;
+}
+
+.project-detail-cta .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.project-back {
+    align-items: center;
+    color: #151515;
+    display: inline-flex;
+    font-size: .82rem;
+    font-weight: 800;
+    gap: 10px;
+    margin-bottom: 34px;
+    text-decoration: none;
+}
+
+.project-back:hover {
+    color: #bf8f54;
+}
+
+@media (max-width: 991.98px) {
+    .project-detail-hero,
+    .project-detail-hero-content {
+        min-height: 66vh;
+    }
+
+    .project-detail-intro {
+        gap: 45px;
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-cta {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 45px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .project-detail-hero,
+    .project-detail-hero-content {
+        min-height: 72vh;
+    }
+
+    .project-detail-hero::after {
+        background: linear-gradient(180deg, rgba(10,10,10,.35), rgba(10,10,10,.85));
+    }
+
+    .project-detail-hero-content {
+        padding: 120px 0 48px;
+    }
+
+    .project-detail-hero h1 {
+        font-size: clamp(3.2rem, 16vw, 5rem);
+    }
+
+    .project-detail-main {
+        padding: 70px 0 80px;
+    }
+
+    .project-detail-intro {
+        margin-bottom: 65px;
+    }
+
+    .project-detail-image {
+        margin-bottom: 60px;
+    }
+
+    .project-detail-grid {
+        margin-bottom: 65px;
+    }
+
+    .project-detail-card {
+        min-height: 0;
+        padding: 25px;
+    }
+
+    .project-detail-cta {
+        padding: 35px 25px;
+    }
+
+    .project-detail-cta .btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-detail-hero-image img {
+        transition: none !important;
+    }
+}
