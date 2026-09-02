@@ -1,3 +1,5 @@
+@import url("header.css");
+
 /* ==========================================================
    TEJO ENGENHARIA — PÁGINAS DE PROJETOS
    Extensão visual do style.css principal.
@@ -250,9 +252,6 @@
     margin-bottom: 0;
 }
 
-/* ==========================================================
-   IMAGEM PRINCIPAL
-   ========================================================== */
 .project-detail-image {
     background: var(--tejo-ink);
     box-shadow: var(--tejo-shadow);
@@ -291,9 +290,6 @@
     transform: scale(1.025);
 }
 
-/* ==========================================================
-   INFORMAÇÕES DO PROJETO
-   ========================================================== */
 .project-detail-grid {
     display: grid;
     gap: 18px;
@@ -352,9 +348,6 @@
     max-width: 340px;
 }
 
-/* ==========================================================
-   CTA — mesma linguagem da CTA principal do site
-   ========================================================== */
 .project-detail-cta {
     align-items: center;
     background: var(--tejo-stone);
@@ -406,191 +399,55 @@
     white-space: nowrap;
 }
 
-/* ==========================================================
-   RESPONSIVIDADE
-   ========================================================== */
 @media (max-width: 1199.98px) {
-    .project-detail-hero-image {
-        left: 48%;
-    }
-
-    .project-detail-hero-inner {
-        max-width: 590px;
-    }
+    .project-detail-hero-image { left: 48%; }
+    .project-detail-hero-inner { max-width: 590px; }
 }
 
 @media (max-width: 991.98px) {
-    .project-detail-hero-image {
-        left: 0;
-        opacity: .28;
-    }
-
-    .project-detail-hero-image::after {
-        background: linear-gradient(180deg, rgba(243,241,237,.72), rgba(243,241,237,.96));
-    }
-
-    .project-detail-hero-content {
-        min-height: 610px;
-        padding: 82px 0 72px;
-    }
-
-    .project-detail-hero-inner {
-        max-width: 720px;
-        padding-right: 0;
-    }
-
-    .project-detail-intro {
-        grid-template-columns: 1fr;
-    }
-
-    .project-detail-copy {
-        border-left: 0;
-        border-top: 1px solid rgba(191,143,84,.45);
-        padding: 28px 0 0;
-    }
-
-    .project-detail-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .project-detail-cta {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+    .project-detail-hero-image { left: 0; opacity: .28; }
+    .project-detail-hero-image::after { background: linear-gradient(180deg, rgba(243,241,237,.72), rgba(243,241,237,.96)); }
+    .project-detail-hero-content { min-height: 610px; padding: 82px 0 72px; }
+    .project-detail-hero-inner { max-width: 720px; padding-right: 0; }
+    .project-detail-intro { grid-template-columns: 1fr; }
+    .project-detail-copy { border-left: 0; border-top: 1px solid rgba(191,143,84,.45); padding: 28px 0 0; }
+    .project-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project-detail-cta { align-items: flex-start; flex-direction: column; }
 }
 
 @media (max-width: 767.98px) {
-    .project-page .navbar {
-        padding: 10px 0;
-    }
-
-    .project-page .navbar-brand img {
-        height: 48px;
-        width: 48px;
-    }
-
-    .project-detail-hero::before {
-        height: 200px;
-        width: 200px;
-    }
-
-    .project-detail-hero-image {
-        opacity: .2;
-    }
-
-    .project-detail-hero-content {
-        min-height: 570px;
-        padding: 72px 0 58px;
-    }
-
-    .project-detail-hero-inner::before {
-        display: none;
-    }
-
-    .project-detail-number {
-        margin-bottom: 22px;
-    }
-
-    .project-detail-hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
-        line-height: .94;
-    }
-
-    .project-detail-hero-lead {
-        font-size: .98rem;
-        line-height: 1.72;
-    }
-
-    .project-detail-main {
-        padding: 68px 0 78px;
-    }
-
-    .project-detail-main::before {
-        display: none;
-    }
-
-    .project-back {
-        margin-bottom: 42px;
-    }
-
-    .project-detail-intro {
-        gap: 30px;
-        margin-bottom: 52px;
-    }
-
-    .project-detail-intro h2 {
-        font-size: 2.15rem;
-    }
-
-    .project-detail-copy {
-        font-size: .96rem;
-        line-height: 1.76;
-    }
-
-    .project-detail-image {
-        margin-bottom: 50px;
-    }
-
-    .project-detail-image::before {
-        inset: 10px;
-    }
-
-    .project-detail-image img {
-        height: 430px;
-    }
-
-    .project-detail-grid {
-        gap: 14px;
-        grid-template-columns: 1fr;
-        margin-bottom: 52px;
-    }
-
-    .project-detail-card {
-        min-height: 0;
-        padding: 25px;
-    }
-
-    .project-detail-card span {
-        margin-bottom: 20px;
-    }
-
-    .project-detail-cta {
-        border-left-width: 3px;
-        gap: 26px;
-        padding: 34px 25px;
-    }
-
-    .project-detail-cta h2 {
-        font-size: 2.05rem;
-    }
-
-    .project-detail-cta .btn {
-        justify-content: center;
-        width: 100%;
-    }
+    .project-page .navbar { padding: 10px 0; }
+    .project-page .navbar-brand img { height: 48px; width: 48px; }
+    .project-detail-hero::before { height: 200px; width: 200px; }
+    .project-detail-hero-image { opacity: .2; }
+    .project-detail-hero-content { min-height: 570px; padding: 72px 0 58px; }
+    .project-detail-hero-inner::before { display: none; }
+    .project-detail-number { margin-bottom: 22px; }
+    .project-detail-hero h1 { font-size: clamp(3rem, 15vw, 5rem); line-height: .94; }
+    .project-detail-hero-lead { font-size: .98rem; line-height: 1.72; }
+    .project-detail-main { padding: 68px 0 78px; }
+    .project-detail-main::before { display: none; }
+    .project-back { margin-bottom: 42px; }
+    .project-detail-intro { gap: 30px; margin-bottom: 52px; }
+    .project-detail-intro h2 { font-size: 2.15rem; }
+    .project-detail-copy { font-size: .96rem; line-height: 1.76; }
+    .project-detail-image { margin-bottom: 50px; }
+    .project-detail-image::before { inset: 10px; }
+    .project-detail-image img { height: 430px; }
+    .project-detail-grid { gap: 14px; grid-template-columns: 1fr; margin-bottom: 52px; }
+    .project-detail-card { min-height: 0; padding: 25px; }
+    .project-detail-card span { margin-bottom: 20px; }
+    .project-detail-cta { border-left-width: 3px; gap: 26px; padding: 34px 25px; }
+    .project-detail-cta h2 { font-size: 2.05rem; }
+    .project-detail-cta .btn { justify-content: center; width: 100%; }
 }
 
 @media (max-width: 420px) {
-    .project-detail-hero-content {
-        min-height: 540px;
-    }
-
-    .project-detail-hero h1 {
-        font-size: 2.7rem;
-    }
-
-    .project-detail-hero-lead {
-        font-size: .92rem;
-    }
-
-    .project-detail-image img {
-        height: 350px;
-    }
+    .project-detail-hero-content { min-height: 540px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .project-detail-image img,
-    .project-detail-card {
-        transition: none;
-    }
+    .project-detail-card,
+    .project-detail-cta .btn { transition: none; }
 }
