@@ -10,6 +10,15 @@
         document.head.appendChild(performanceCss);
     }
 
+    // Header corporativo isolado para manter a identidade visual limpa e responsiva.
+    if (!document.getElementById('tejo-header-css')) {
+        var headerCss = document.createElement('link');
+        headerCss.rel = 'stylesheet';
+        headerCss.href = 'css/header.css';
+        headerCss.id = 'tejo-header-css';
+        document.head.appendChild(headerCss);
+    }
+
     // Prioriza apenas o primeiro visual do hero; o restante continua sob demanda.
     var heroImages = document.querySelectorAll('.header-carousel img');
     if (heroImages.length) {
