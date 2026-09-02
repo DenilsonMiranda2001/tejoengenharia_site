@@ -1,0 +1,289 @@
+/* =========================================================
+   TEJO — HEADER CORPORATIVO
+   Camada isolada: não interfere nas demais seções do site.
+   ========================================================= */
+
+.site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+    min-height: 0 !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-bottom: 1px solid rgba(21, 21, 21, 0.08) !important;
+    box-shadow: 0 8px 28px rgba(21, 21, 21, 0.06) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.site-header::before,
+.site-header::after,
+.site-header .navbar::before,
+.site-header .navbar::after,
+.site-header .navbar-brand::before,
+.site-header .navbar-brand::after,
+.site-header .navbar-nav::after {
+    content: none !important;
+    display: none !important;
+}
+
+.site-header .container {
+    max-width: min(100% - 48px, 1280px);
+}
+
+.site-header .navbar {
+    min-height: 82px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Marca */
+.site-header .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    color: #151515 !important;
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .025em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.site-header .navbar-brand img {
+    width: 48px !important;
+    height: 48px !important;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.site-header .navbar-brand span {
+    display: inline-block;
+}
+
+/* Navegação desktop */
+.site-header .navbar-collapse {
+    justify-content: flex-end;
+}
+
+.site-header .navbar-nav {
+    align-items: center;
+    gap: 4px;
+}
+
+.site-header .navbar .navbar-nav .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    margin: 0 !important;
+    padding: 10px 13px !important;
+    color: #2a2927 !important;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: .86rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+    line-height: 1;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.site-header .navbar .navbar-nav .nav-link::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 4px;
+    width: auto;
+    height: 2px;
+    background: #BF8F54;
+    border: 0;
+    opacity: 0;
+    transform: scaleX(.35);
+    transform-origin: center;
+    transition: opacity .22s ease, transform .22s ease;
+}
+
+.site-header .navbar .navbar-nav .nav-link:hover,
+.site-header .navbar .navbar-nav .nav-link:focus,
+.site-header .navbar .navbar-nav .nav-link.active {
+    color: #966D3E !important;
+    background: rgba(191, 143, 84, .06);
+}
+
+.site-header .navbar .navbar-nav .nav-link:hover::after,
+.site-header .navbar .navbar-nav .nav-link:focus::after,
+.site-header .navbar .navbar-nav .nav-link.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* CTA */
+.site-header .navbar .navbar-nav .nav-link.nav-link-cta {
+    min-height: 42px;
+    margin-left: 12px !important;
+    padding: 11px 17px !important;
+    gap: 8px;
+    border: 1px solid #BF8F54 !important;
+    border-radius: 5px;
+    background: #BF8F54 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 20px rgba(191, 143, 84, .16) !important;
+    font-weight: 700;
+}
+
+.site-header .navbar .navbar-nav .nav-link.nav-link-cta::after {
+    display: none !important;
+}
+
+.site-header .navbar .navbar-nav .nav-link.nav-link-cta:hover,
+.site-header .navbar .navbar-nav .nav-link.nav-link-cta:focus {
+    background: #151515 !important;
+    border-color: #151515 !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+/* Botão mobile */
+.site-header .navbar-toggler {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: auto;
+    border: 1px solid rgba(21, 21, 21, .14) !important;
+    border-radius: 5px;
+    background: #fff !important;
+    box-shadow: none !important;
+}
+
+.site-header .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(191, 143, 84, .15) !important;
+}
+
+.site-header .navbar-toggler .navbar-toggler-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Tablet / mobile */
+@media (max-width: 991.98px) {
+    .site-header .container {
+        max-width: min(100% - 28px, 760px);
+    }
+
+    .site-header .navbar {
+        min-height: 72px !important;
+        flex-wrap: wrap;
+    }
+
+    .site-header .navbar-brand img {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    .site-header .navbar-brand {
+        font-size: .93rem;
+    }
+
+    .site-header .navbar-collapse {
+        flex-basis: 100%;
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px 0 14px;
+        border-top: 1px solid rgba(21, 21, 21, .08);
+    }
+
+    .site-header .navbar-nav {
+        align-items: stretch !important;
+        gap: 2px;
+        width: 100%;
+    }
+
+    .site-header .navbar .navbar-nav .nav-link,
+    .site-header .navbar .navbar-nav .nav-link.nav-link-cta {
+        width: 100%;
+        min-height: 46px;
+        margin: 0 !important;
+        padding: 12px 14px !important;
+        justify-content: flex-start;
+        border-radius: 5px;
+    }
+
+    .site-header .navbar .navbar-nav .nav-link::after {
+        left: 4px;
+        right: auto;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        height: auto;
+        transform: scaleY(.25);
+        transform-origin: center;
+    }
+
+    .site-header .navbar .navbar-nav .nav-link:hover::after,
+    .site-header .navbar .navbar-nav .nav-link:focus::after,
+    .site-header .navbar .navbar-nav .nav-link.active::after {
+        transform: scaleY(1);
+    }
+
+    .site-header .navbar .navbar-nav .nav-link.nav-link-cta {
+        margin-top: 8px !important;
+        justify-content: center;
+    }
+}
+
+/* Celulares */
+@media (max-width: 575.98px) {
+    .site-header .container {
+        max-width: calc(100% - 24px);
+    }
+
+    .site-header .navbar {
+        min-height: 68px !important;
+    }
+
+    .site-header .navbar-brand {
+        gap: 9px;
+        font-size: .84rem;
+    }
+
+    .site-header .navbar-brand img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .site-header .navbar-toggler {
+        width: 42px;
+        height: 42px;
+    }
+
+    .site-header .navbar-collapse {
+        margin-top: 8px;
+        padding-bottom: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-header .navbar-brand span {
+        max-width: 145px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header .navbar .navbar-nav .nav-link::after,
+    .site-header .navbar .navbar-nav .nav-link.nav-link-cta {
+        transition: none;
+    }
+}
