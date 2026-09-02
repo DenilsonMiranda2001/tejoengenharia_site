@@ -1,6 +1,26 @@
 (function ($) {
     "use strict";
 
+    // Carrega a camada de performance o mais cedo possível sem alterar o CSS global.
+    if (!document.getElementById('tejo-performance-css')) {
+        var performanceCss = document.createElement('link');
+        performanceCss.rel = 'stylesheet';
+        performanceCss.href = 'css/performance.css';
+        performanceCss.id = 'tejo-performance-css';
+        document.head.appendChild(performanceCss);
+    }
+
+    // Prioriza apenas o primeiro visual do hero; o restante continua sob demanda.
+    var heroImages = document.querySelectorAll('.header-carousel img');
+    if (heroImages.length) {
+        heroImages[0].loading = 'eager';
+        heroImages[0].fetchPriority = 'high';
+        for (var i = 1; i < heroImages.length; i++) {
+            heroImages[i].loading = 'lazy';
+            heroImages[i].fetchPriority = 'low';
+        }
+    }
+
     var spinner = document.getElementById('spinner');
     if (spinner) {
         requestAnimationFrame(function () {
@@ -52,19 +72,28 @@
         if (history.pushState) history.pushState(null, '', href);
     });
 
-    if ($('.header-carousel').length && typeof $.fn.owlCarousel === 'function' && window.innerWidth >= 576) {
-        $('.header-carousel').owlCarousel({
-            autoplay: true,
-            autoplayTimeout: 5500,
-            autoplayHoverPause: true,
-            smartSpeed: 650,
-            loop: true,
-            dots: true,
-            nav: false,
-            items: 1
-        });
+    var initHeroCarousel = function () {
+        if ($('.header-carousel').length && typeof $.fn.owlCarousel === 'function' && window.innerWidth >= 576) {
+            $('.header-carousel').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 5500,
+                autoplayHoverPause: true,
+                smartSpeed: 650,
+                loop: true,
+                dots: true,
+                nav: false,
+                items: 1
+            });
+        } else {
+            $('.header-carousel').addClass('header-carousel-static');
+        }
+    };
+
+    // Deixa o primeiro paint acontecer antes de inicializar o carrossel.
+    if (window.requestIdleCallback) {
+        window.requestIdleCallback(initHeroCarousel, { timeout: 1200 });
     } else {
-        $('.header-carousel').addClass('header-carousel-static');
+        window.setTimeout(initHeroCarousel, 0);
     }
 
     if ($('.projects-section').length && !document.getElementById('projects-home-css')) {
