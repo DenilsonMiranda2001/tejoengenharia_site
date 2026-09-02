@@ -1,0 +1,355 @@
+/* ==========================================================
+   TEJO — PROJETOS DA HOME
+   CSS isolado exclusivamente na seção #projetos.
+   Não altera o restante do site.
+   ========================================================== */
+
+.projects-section {
+    background: #f9faf9;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-section .projects-heading {
+    max-width: 820px;
+    margin-bottom: 46px;
+}
+
+.projects-section .projects-heading p {
+    margin-bottom: 0;
+    max-width: 680px;
+}
+
+.projects-section .project-featured {
+    background: #151515;
+    box-shadow: var(--tejo-shadow);
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+    margin-bottom: 38px;
+    min-height: 510px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-section .project-featured-image {
+    min-height: 510px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-section .project-featured-image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+    width: 100%;
+}
+
+.projects-section .project-featured:hover .project-featured-image img {
+    transform: scale(1.035);
+}
+
+.projects-section .project-featured-content {
+    align-self: center;
+    padding: 58px;
+    position: relative;
+}
+
+.projects-section .project-featured-content::before {
+    background: var(--tejo-gold);
+    content: "";
+    height: 76px;
+    left: 0;
+    position: absolute;
+    top: 58px;
+    width: 2px;
+}
+
+.projects-section .project-index,
+.projects-section .project-category {
+    display: block;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.projects-section .project-index {
+    color: var(--tejo-gold);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    margin-bottom: 30px;
+}
+
+.projects-section .project-category {
+    color: rgba(255,255,255,.62);
+    font-size: .72rem;
+    letter-spacing: .08em;
+    margin-bottom: 10px;
+}
+
+.projects-section .project-featured-content h3 {
+    color: #fff;
+    font-size: clamp(2.5rem, 4vw, 4.4rem);
+    letter-spacing: -.045em;
+    line-height: .98;
+    margin-bottom: 20px;
+}
+
+.projects-section .project-featured-content p {
+    color: rgba(255,255,255,.68);
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+.projects-section .project-open {
+    background: transparent;
+    border: 0;
+    color: var(--tejo-gold);
+    cursor: pointer;
+    font-weight: 800;
+    padding: 0;
+    text-align: left;
+}
+
+.projects-section .project-open i {
+    margin-left: 8px;
+    transition: transform .25s ease;
+}
+
+.projects-section .project-open:hover i {
+    transform: translateX(5px);
+}
+
+.projects-section .project-toolbar {
+    align-items: center;
+    border-bottom: 1px solid var(--tejo-line);
+    border-top: 1px solid var(--tejo-line);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    padding: 16px 0;
+}
+
+.projects-section .project-toolbar > span {
+    color: var(--tejo-ink);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.projects-section .project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.projects-section .project-filter {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--tejo-muted);
+    cursor: pointer;
+    font-size: .78rem;
+    font-weight: 800;
+    padding: 9px 14px;
+    text-transform: uppercase;
+}
+
+.projects-section .project-filter:hover,
+.projects-section .project-filter.active {
+    background: var(--tejo-ink);
+    border-color: var(--tejo-ink);
+    color: #fff;
+}
+
+.projects-section .projects-grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.projects-section .project-card {
+    grid-column: span 4;
+    min-width: 0;
+}
+
+.projects-section .project-card-large,
+.projects-section .project-card-wide {
+    grid-column: span 6;
+}
+
+.projects-section .project-card-link {
+    background: #fff;
+    border: 1px solid rgba(21,21,21,.09);
+    box-shadow: 0 14px 40px rgba(21,21,21,.055);
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+.projects-section .project-card-link:hover {
+    box-shadow: 0 24px 60px rgba(21,21,21,.12);
+    transform: translateY(-5px);
+}
+
+.projects-section .project-card-media {
+    background: var(--tejo-ink);
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-section .project-card-media img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .55s ease;
+    width: 100%;
+}
+
+.projects-section .project-card-link:hover .project-card-media img {
+    transform: scale(1.045);
+}
+
+.projects-section .project-card-media::after {
+    background: linear-gradient(180deg, transparent 50%, rgba(21,21,21,.72) 100%);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.projects-section .project-card-number,
+.projects-section .project-card-arrow {
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+}
+
+.projects-section .project-card-number {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: .8rem;
+    font-weight: 800;
+    left: 20px;
+    top: 18px;
+}
+
+.projects-section .project-card-arrow {
+    font-size: 1.5rem;
+    right: 20px;
+    top: 14px;
+}
+
+.projects-section .project-card-info {
+    padding: 25px 26px 28px;
+    text-align: left;
+}
+
+.projects-section .project-card-info > span {
+    color: var(--tejo-gold);
+    display: block;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.projects-section .project-card-info h3 {
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+
+.projects-section .project-card-info p {
+    color: var(--tejo-muted);
+    font-size: .92rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.projects-section .project-card.is-hidden {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .projects-section .project-featured {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-section .project-featured-image {
+        min-height: 400px;
+    }
+
+    .projects-section .project-featured-content {
+        padding: 46px;
+    }
+
+    .projects-section .project-featured-content::before {
+        left: 46px;
+        top: 46px;
+    }
+
+    .projects-section .project-featured-content h3 {
+        font-size: 3rem;
+    }
+
+    .projects-section .project-card,
+    .projects-section .project-card-large,
+    .projects-section .project-card-wide {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .projects-section .project-featured-image {
+        min-height: 300px;
+    }
+
+    .projects-section .project-featured-content {
+        padding: 38px 28px;
+    }
+
+    .projects-section .project-featured-content::before {
+        left: 28px;
+        top: 38px;
+    }
+
+    .projects-section .project-featured-content h3 {
+        font-size: 2.55rem;
+    }
+
+    .projects-section .project-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .projects-section .project-card,
+    .projects-section .project-card-large,
+    .projects-section .project-card-wide {
+        grid-column: 1 / -1;
+    }
+
+    .projects-section .project-card-media {
+        height: 290px;
+    }
+}
+
+@media (max-width: 420px) {
+    .projects-section .project-featured-image {
+        min-height: 245px;
+    }
+
+    .projects-section .project-featured-content h3 {
+        font-size: 2.25rem;
+    }
+
+    .projects-section .project-filters {
+        width: 100%;
+    }
+
+    .projects-section .project-filter {
+        flex: 1;
+    }
+}
