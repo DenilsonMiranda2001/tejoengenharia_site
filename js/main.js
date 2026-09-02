@@ -66,6 +66,22 @@
     }
 
     /* ==========================================================
+       PORTFÓLIO DA HOME — CSS ISOLADO E MODAL ANTIGO REMOVIDO
+       ========================================================== */
+    if ($('.projects-section').length) {
+        if (!document.getElementById('projects-home-css')) {
+            $('<link>', {
+                id: 'projects-home-css',
+                rel: 'stylesheet',
+                href: 'css/projects-home.css'
+            }).appendTo('head');
+        }
+
+        // A navegação agora usa páginas individuais; o modal antigo não é mais necessário.
+        $('#projectModal').remove();
+    }
+
+    /* ==========================================================
        PORTFÓLIO — FILTROS E NAVEGAÇÃO PARA PÁGINAS INDIVIDUAIS
        ========================================================== */
     var projectPages = {
