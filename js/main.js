@@ -21,7 +21,7 @@
     var updateHeader = function () {
         var scrollY = window.scrollY || window.pageYOffset;
         if (header) header.classList.toggle('shadow-sm', scrollY > 20);
-        if (backToTop) backToTop.classList.toggle('is-visible', scrollY > 160);
+        if (backToTop) backToTop.style.display = scrollY > 160 ? 'inline-flex' : 'none';
         ticking = false;
     };
 
